@@ -82,4 +82,18 @@ class ProductController extends BaseController
         $product->save();
         return $this->sendResponse($product->toArray(), 'Product updated successfully.');
     }
+
+    /**
+     * Remove the specified product
+     *
+     * @param int $id
+     * @return JsonResponse
+     * @throws \Exception
+     */
+
+    public function destroy(Product $product)
+    {
+        $product->delete();
+        return $this->sendResponse($product->toArray(), 'Product deleted successfully.');
+    }
 }
