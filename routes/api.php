@@ -17,6 +17,10 @@ Route::post('register', 'API\RegisterController@register');
 
 Route::middleware('auth:api')->group(function () {
    Route::resource('products', 'API\ProductController');
+   Route::resource('suppliers', 'API\SupplierController');
+   Route::resource('supplier/products', 'API\SupplierProductController');
+   Route::resource('orders', 'API\OrderController');
+   Route::resource('order/details', 'API\OrderDetailController');
 });
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
