@@ -21,7 +21,14 @@ Route::middleware('auth:api')->group(function () {
    Route::resource('supplier/products', 'API\SupplierProductController');
    Route::resource('orders', 'API\OrderController');
    Route::resource('order/details', 'API\OrderDetailController');
+
+   Route::get('/users', function (Request $request){
+       return response()->json(['name' => Auth::User()->name]);
+   });
+
 });
+
+
 
 //Route::middleware('auth:api')->get('/user', function (Request $request) {
 //    return $request->user();

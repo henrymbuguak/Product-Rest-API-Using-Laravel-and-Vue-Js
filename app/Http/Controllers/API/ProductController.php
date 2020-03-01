@@ -18,7 +18,8 @@ class ProductController extends BaseController
     public function index()
     {
         $products = Product::all();
-        return $this->sendResponse($products->toArray(), 'Product retrieved successfully.');
+//        return $this->sendResponse($products->toArray(), 'Product retrieved successfully.');
+        return response()->json(['products' => $products]);
     }
     /**
      * Store new product
